@@ -1,4 +1,7 @@
-﻿using System;
+﻿using Microsoft.EntityFrameworkCore;
+using ShafiqWebAppAccess2RDS.Models;
+//
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -9,6 +12,7 @@ using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+
 
 namespace ShafiqWebAppAccess2RDS
 {
@@ -31,8 +35,9 @@ namespace ShafiqWebAppAccess2RDS
                 options.MinimumSameSitePolicy = SameSiteMode.None;
             });
 
-
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
+            //
+            services.AddDbContext<DrAppDBContext>(options => options.UseSqlServer(Configuration.GetConnectionString("Connection2RDS")));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

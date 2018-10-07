@@ -1,0 +1,13 @@
+﻿Scaffold-DbContext "Data Source=drappserver.database.windows.net,1433; database=DrAppDB; User ID=shafiq; Password=Password1;" "Microsoft.EntityFrameworkCore.SqlServer" -O Models
+
+/*
+Server=tcp:drappserver.database.windows.net,1433;
+Initial Catalog=DrAppDB;
+Persist Security Info=False;
+User ID={your_username};
+Password={your_password};
+MultipleActiveResultSets=False;
+Encrypt=True;
+TrustServerCertificate=False;
+Connection Timeout=30;
+*/
